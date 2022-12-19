@@ -1,0 +1,162 @@
+body{
+    background-color:#d2dce7;
+}
+.cont{
+    position:absolute;
+    top:10px;
+}
+.header{
+    display: flex;
+}
+.account{
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.hand{
+    margin:0 auto;
+    width:70vw;
+    background-color: #f8f8f8;
+    border-radius: 50px;
+    padding:10px;
+    padding-left: 30px;
+    margin-top:5vh;
+    display: flex;
+    margin-bottom: 30px;
+}
+
+.question{
+    margin:auto 0;
+
+}
+.dropDown{
+    margin-left: auto;
+    margin-right: 40px;
+}
+
+
+.level{
+    margin:0 auto;
+    width:70vw;
+    
+}
+.title:hover{
+    cursor: pointer;
+    background-color: #d2dce7;
+}
+
+.title{
+    border: 5px solid #bdcfe2;
+    background-color: white;
+    display:flex;
+    border-radius: 5px;
+    margin-top: 10px;
+
+}
+
+.rightTitle{
+    margin: auto 10px auto auto;
+    display: flex;
+}
+.score{
+    margin: auto 20px auto auto;
+    font-weight:bold;
+}
+.grayBar{
+    width: 30vw;
+    background-color: gray;
+    height: fit-content;
+    border-radius:40px;
+}
+.colorBar{
+    height: 20px;
+    /* width:30%; */
+    background-color: lightgreen;
+    border-radius: 40px 0 0 40px;
+}
+/* .words{
+    margin-top: 5px;
+    display: none;
+    overflow: hidden;
+
+}
+
+.word{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    background-color: white;
+    border-radius: 50px;
+    height: 50px;
+    border: 2px solid #e0e0e0;
+}
+
+.word:hover{
+    cursor: pointer;
+    background-color: #e0e0e0;
+} */
+
+/* .words{
+    display: none;
+    overflow: hidden;
+    flex-wrap: wrap;
+    margin-top:10px;
+} */
+
+.word{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    border-radius: 5px;
+    height: 50px;
+    width: 300px;
+    /* margin-right: auto; */
+    margin:5px auto 0 auto;
+}
+
+.word:hover{
+    cursor: pointer;
+}
+
+.wordColor{
+    background-color: white;
+
+}
+.wordColor:hover{
+    background-color: #bdcfe2;
+}
+
+.wordColorCompleted{
+    background-color: rgb(157, 236, 157);
+
+}
+.wordColorCompleted:hover{
+    background-color: rgb(157, 236, 157);
+}
+
+/* .table{
+    width: 100%;
+}
+.status{
+    width: 20%;
+}
+
+.w{
+    width: 60%;
+}
+.difficulty{
+    width: 20%;
+}
+table{
+    border-collapse:collapse;
+    border:1px solid #FF0000;
+    }
+table td{
+    border:1px solid #FF0000;
+    } */
+
+.grid-container {
+    display: none;
+    grid-template-columns: auto auto auto;
+    padding: 10px;
+    }

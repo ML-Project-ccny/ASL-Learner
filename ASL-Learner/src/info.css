@@ -1,0 +1,97 @@
+.info{
+
+    position: absolute;
+    
+    height: 100vh;
+    width: 206.5vh;
+}
+
+
+
+.top{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    
+    border: 3px solid black;
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQg6mYQjH2-qaBj9DpumwxfYnp62awIkc666g&usqp=CAU");
+    padding-top: 6px;
+    padding-bottom: 58px;
+    padding-left: 880px;
+    width: 100%;
+}
+
+
+
+table{
+    margin-top: 10px;
+    border:1px solid white;
+    width: 50%;
+    margin-left: 500px;
+    background-color: rgba(0,0,0,0.5);
+    
+}
+
+th{
+    border:1px solid white;
+    width: 100%;
+}
+
+tr{
+    border-radius: 40px;
+}
+
+td{
+    border:3px solid black;
+    width: 80%;
+    color: #fff;
+    
+}
+
+
+
+.button-90 {
+    align-self:center;
+  appearance: button;
+  backface-visibility: hidden;
+  background-color: #765ee0;
+  border-radius: 6px;
+  border-width: 0;
+  box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset,rgba(50, 50, 93, .1) 0 2px 5px 0,rgba(0, 0, 0, .07) 0 1px 1px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  font-family: -apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Ubuntu,sans-serif;
+  font-size: 100%;
+  height: 44px;
+  line-height: 1.15;
+  margin-bottom: 15px;
+  outline: none;
+  overflow: hidden;
+  padding: 0 25px;
+  position: relative;
+  text-align: center;
+  text-transform: none;
+  transform: translateZ(0);
+  transition: all .2s,box-shadow .08s ease-in;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width:fit-content;
+  margin-left: 20px;
+  margin-right: 20px;
+  left: 1300px;
+  bottom: 970px;
+}
+
+
+section {
+    width: 100%;
+    max-width: 420px;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 1rem;
+    background-color: rgba(0,0,0,0.4);
+    
+}
