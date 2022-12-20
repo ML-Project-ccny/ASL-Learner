@@ -132,6 +132,49 @@ https://drive.google.com/file/d/1JrjblUbsrpmFybwOZ1mEJdVmdI0dVIjL/view?usp=share
 
 ### ML Model Experimental Performance
 
+The overall evaluation of model performance was based on the accuracy of the Rasband dataset.
+
+#### Experiment Performance
+
+| # | Model | Training Dataset | Training Accuracy | Synthetic | Londhe | Akash | Rasband | PHP | Geislinger | Yauheni | Luis |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 1 | built-from-scratch | Synthetic | 82% | 3% | --- | --- | --- | --- | --- | --- | --- |
+| 2 | built-from-scratch + background removal | Synthetic | 95% | 82% | 0% | --- | --- | --- | --- | --- | --- |
+| 3 | built-from-scratch + background removal | Synthetic | 97% | 85% | 0% | --- | --- | --- | --- | --- | --- |
+| 4 | built-from-scratch + background removal | Londhe | 97% | 5% | 96% | --- | --- | --- | --- | 3.8% | --- |
+| 5 | built-from-scratch + background removal | Londhe | 87% | <10% | 70% | <10% | --- | --- | <10% | 3.8% | --- |
+| 6 | built-from-scratch + background removal | Akash | 97% | --- | --- | 95% | 7% | --- | --- | 3.8% | --- |
+| 7 | built-from-scratch + background removal | Akash | 97% | --- | --- | 95% | 17% | --- | --- | 3.8% | --- |
+| 8 | ResNet34 | Akash | 99% | --- | --- | 99% | 75% | --- | --- | 65% | 95% |
+| 9 | ResNet34 + background removal | Akash | 99% | --- | --- | 99% | 76% | --- | --- | 69% | 95% |
+| 10 | ResNet34 + background removal + remove pairs of misclassified letters | Akash | 99% | --- | --- | 99% | 84% | --- | --- | 80% | 99% |
+| 11 | ResNet34 + background removal | PHP | 90% | --- | --- | --- | 43% | 95% | --- | 24% | --- |
+| 12 | ResNet152 + background removal | Akash | 100% | --- | --- | 100% | 84% | --- | --- | 49% | 99% |
+| 13 | ResNet152 + separate models for pairs of misclassified letters + background removal | Akash | 100% | --- | --- | 100% | 82% | --- | --- | 60% | 95% |
+| 14 | Regnet_y_32gf + background removal | Akash | 100% | --- | --- | 100% | 80% | --- | --- | 62% | 92% |
+
+Experiment 12 was concluded as the best in terms of model performance.
+
+#### Experiment Parameters
+| # | Model | Epochs | Transforms | Hyperparameters | # of Dense Layers | Units per layer | # of Conv Layers |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| 1 | built-from-scratch | 8 | transforms.Grayscale(num_output_channels=1) <br />transforms.Resize((100,132)) <br />transforms.ToTensor() | kernel_size1=5 <br />stride1=1 <br />kernel_size2=5 <br />stride2=1  <br />criterion = torch.nn.NLLLoss() <br />optimizer = optim.SGD(net.parameters(), lr=0.01, momentum=0.9) | 1 | (5280, 2000) | 2 |
+| 2 | built-from-scratch + background removal | 8 | transforms.Grayscale(num_output_channels=1) <br />transforms.Resize((100,132)) <br />transforms.ToTensor() | kernel_size1=5 <br />stride1=1 <br />kernel_size2=5 <br />stride2=1  <br />criterion = torch.nn.NLLLoss() <br />optimizer = optim.SGD(net.parameters(), lr=0.01, momentum=0.9) | 1 | (5280, 2000) | 2 |
+| 3 | built-from-scratch + background removal | 15 | transforms.Grayscale(num_output_channels=1) <br />transforms.Resize((132,132)) <br />transforms.ToTensor() | kernel_size1=5 <br />stride1=1 <br />kernel_size2=5 <br />stride2=1  <br />criterion = torch.nn.NLLLoss() <br />optimizer = optim.SGD(net.parameters(), lr=0.01, momentum=0.9) | 1 | (7680, 2000) | 2 |
+| 4 | built-from-scratch + background removal | 1 | transforms.Grayscale(num_output_channels=1) <br />transforms.Resize((80,80)) <br />transforms.ToTensor() | kernel_size1=5 <br />stride1=1 <br />kernel_size2=5 <br />stride2=1  <br />criterion = torch.nn.NLLLoss() <br />optimizer = optim.SGD(net.parameters(), lr=0.01, momentum=0.9) | 1 | (1470, 500) | 2 |
+| 5 | built-from-scratch + background removal | 1 | transforms.Grayscale(num_output_channels=1) <br />transforms.Resize((80,80)) <br />transforms.RandomHorizontalFlip(p=0.5) <br />transforms.RandomRotation(35) <br />transforms.RandomAutocontrast(p=0.5) <br />transforms.ColorJitter(brightness=0.5, contrast=0.5, saturation=0.5, hue=0.5) <br />transforms.RandomRotation(10) <br />transforms.RandomPerspective(distortion_scale=0.2) <br />transforms.ToTensor() | kernel_size1=5 <br />stride1=1 <br />kernel_size2=5 <br />stride2=1  <br />criterion = torch.nn.NLLLoss() <br />optimizer = optim.SGD(net.parameters(), lr=0.01, momentum=0.9) | 1 | (1470, 500) | 2 |
+| 6 | built-from-scratch + background removal | 4 | transforms.Grayscale(num_output_channels=1) <br />transforms.Resize((75,75)) <br />transforms.ToTensor() | kernel_size1=5 <br />stride1=1 <br />kernel_size2=5 <br />stride2=1  <br />criterion = torch.nn.NLLLoss() <br />optimizer = optim.SGD(net.parameters(), lr=0.01, momentum=0.9) | 2 | (1470, 800) <br />(800, 200) | 2 |
+| 7 | built-from-scratch + background removal | 4 | transforms.Grayscale(num_output_channels=1) <br />transforms.Resize((75,75)) <br />transforms.ToTensor() <br />transforms.Normalize(0.5065, 0.2356) | kernel_size1=5 <br />stride1=2<br />kernel_size2=4<br />stride2=1  <br />kernel_size3=3 <br />stride3=1 <br />criterion = torch.nn.NLLLoss() <br />optimizer = optim.SGD(net.parameters(), lr=0.01, momentum=0.9) | 4 | (1470, 800) <br />(800, 600) <br />(600, 500) <br />(500, 300) | 3 |
+| 8 | ResNet34 | 2 | tt.RandomCrop(200, padding=25, padding_mode='reflect') <br />tt.RandomHorizontalFlip() <br />tt.RandomRotation(10) <br />tt.RandomPerspective(distortion_scale=0.2) <br />tt.ToTensor() | max_lr = 1e-4 <br />grad_clip = 0.1 <br />weight_decay = 1e-4 <br />opt_func = torch.optim.Adam | default resnet34  | default resnet34  | default resnet34  |
+| 9 | ResNet34 + background removal | 2 | tt.RandomCrop(200, padding=25, padding_mode='reflect') <br />tt.RandomHorizontalFlip() <br />tt.RandomRotation(10) <br />tt.RandomPerspective(distortion_scale=0.2) <br />tt.ToTensor() | max_lr = 1e-4 <br />grad_clip = 0.1 <br />weight_decay = 1e-4 <br />opt_func = torch.optim.Adam | default resnet34  | default resnet34  | default resnet34  |
+| 10 | ResNet34 + background removal | 2 | tt.RandomCrop(200, padding=25, padding_mode='reflect') <br />tt.RandomHorizontalFlip() <br />tt.RandomRotation(10) <br />tt.RandomPerspective(distortion_scale=0.2) <br />tt.ToTensor() | max_lr = 1e-4 <br />grad_clip = 0.1 <br />weight_decay = 1e-4 <br />opt_func = torch.optim.Adam | default resnet34  | default resnet34  | default resnet34  |
+| 11 | ResNet34 + background removal | 2 | tt.RandomCrop(200, padding=25, padding_mode='reflect') <br />tt.RandomHorizontalFlip() <br />tt.RandomRotation(10) <br />tt.RandomPerspective(distortion_scale=0.2) <br />tt.ToTensor() | max_lr = 1e-4 <br />grad_clip = 0.1 <br />weight_decay = 1e-4 <br />opt_func = torch.optim.Adam | default resnet34  | default resnet34  | default resnet34  |
+| 12 | ResNet152 + background removal | 2 | tt.RandomCrop(200, padding=25, padding_mode='reflect') <br />tt.RandomHorizontalFlip() <br />tt.RandomRotation(10) <br />tt.RandomPerspective(distortion_scale=0.2) <br />tt.ToTensor() | max_lr = 1e-4 <br />grad_clip = 0.1 <br />weight_decay = 1e-4 <br />opt_func = torch.optim.Adam | default resnet152  | default resnet152  | default resnet152  |
+| 13 | ResNet152 + background removal | 2 | tt.RandomCrop(200, padding=25, padding_mode='reflect') <br />tt.RandomHorizontalFlip() <br />tt.RandomRotation(10) <br />tt.RandomPerspective(distortion_scale=0.2) <br />tt.ToTensor() | max_lr = 1e-4 <br />grad_clip = 0.1 <br />weight_decay = 1e-4 <br />opt_func = torch.optim.Adam | default resnet152  | default resnet152  | default resnet152  |
+| 14 | Regnet_y_32gf + background removal | 2 | tt.RandomCrop(200, padding=25, padding_mode='reflect') <br />tt.RandomHorizontalFlip() <br />tt.RandomRotation(10) <br />tt.RandomPerspective(distortion_scale=0.2) <br />tt.ToTensor() | max_lr = 1e-4 <br />grad_clip = 0.1 <br />weight_decay = 1e-4 <br />opt_func = torch.optim.Adam | default regnet_y_32gf  | default regnet_y_32gf  | default regnet_y_32gf  |
+
+
+
 ### User Interface Design
 
 ## Code Organization
