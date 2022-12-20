@@ -170,7 +170,7 @@ https://drive.google.com/file/d/1JrjblUbsrpmFybwOZ1mEJdVmdI0dVIjL/view?usp=share
 * backend
   - _pycache_: it contains all the python caches of the project
   - instance: it has the databases of the project
-  - app.py: it is the python file that contains all the backend functions
+  - app.py: it is the python file that is responsible for fetching the image array, transforming it and evaluating it.
   - model.py: its a python file that contains code for model class and evaluation functions
 * model_training.ipynb: it is the jupiter file that trained the model
 * README.md: it is the readme of the project
