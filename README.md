@@ -1,5 +1,5 @@
 <div align="center">
-	<h1>Name</h1>
+	<h1>ASL Learner</h1>
 </div>
 
 <br/>
@@ -7,13 +7,15 @@
             justify-content: center;
             padding:15px 0 30px 0">
     <div>
-        <img src = "link to image" />
+        <img src = "" />
     </div>
 </div>
 <br/>
 
 
 ## Description
+ASL Learner is a machine learning-based website. We have created this application for people who are interested in learning American Sign language. Through this app, a user can learn how to spell each letter in American Sign language. This app is very useful for people with speaking disabilities and hearing disabilities. This app will teach sign language to hearing disability people, so that they can communicate with others. This app will also help people who want to pursue any career to help the hearing-disabled person. Again, this website is very user-friendly and eye-catching. It is very easy to interact with. We have pages on the website but in the beginning, a user will be greeted with the home page. Then, they can move to the next page where they will find many words on a different levels. The user can choose any word from those levels and it will take them to the page. On that page, the user will try to mimic the sign language of each letter of that chosen word. When the user is done, the website will bring them back to the word choice page. There is also a sign in feature which saves a user’s progress which they can access through the info page.
+
 
 ## Design and Experiments 
 
