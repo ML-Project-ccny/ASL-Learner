@@ -7,7 +7,7 @@
             justify-content: center;
             padding:15px 0 30px 0">
     <div>
-        <img style="margin-right: 35px" src = "https://imgur.com/UlCYr54.png" />
+        <img style="margin-right: 35px; width: 300px; height: 250px" src = "https://3.files.edl.io/5047/21/09/09/154508-86885ac7-894b-431b-8f3a-da44043deb9e.jpg" />
 	    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     </div>
 </div>
@@ -15,62 +15,7 @@
 
 
 ## Description
-ASL Learner is a machine learning-based website. We have created this application for people who are interested in learning American Sign language. Through this app, a user can learn how to spell each letter in American Sign language. This app is very useful for people with speaking disabilities and hearing disabilities. This website will teach sign language to people with hearing disability, which will allow them to communication with others. This app will also help people who want to pursue any career to help the hearing-disabled person. Our website is very user-friendly and eye-catching. It is very easy to interact with. We have pages on the website but in the beginning, a user will be greeted with the home page. Then, they can move to the next page where they will find many words on a different levels. The user can choose any word from those levels and it will take them to the page. On that page, the user will try to mimic the sign language of each letter of that chosen word. When the user is done, the website will bring them back to the word choice page. There is also a sign in feature which saves a user’s progress which they can access through the info page. The different pages of our website is shown below:
-
-<br/>
-<div align="center" style="display:grid; 
-            justify-content: center;
-            padding:15px 0 30px 0">
-    <div>
-        <img style="margin-right: 35px" src = "https://imgur.com/6c8fb1J.png" />
-	    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    </div>
-</div>
-<br/>
-
-<br/>
-<div align="center" style="display:grid; 
-            justify-content: center;
-            padding:15px 0 30px 0">
-    <div>
-        <img style="margin-right: 35px" src = "https://imgur.com/5nMo6JW.png" />
-	    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    </div>
-</div>
-<br/>
-
-<br/>
-<div align="center" style="display:grid; 
-            justify-content: center;
-            padding:15px 0 30px 0">
-    <div>
-        <img style="margin-right: 35px" src = "https://imgur.com/7oTwy6L.png" />
-	    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    </div>
-</div>
-<br/>
-
-<br/>
-<div align="center" style="display:grid; 
-            justify-content: center;
-            padding:15px 0 30px 0">
-    <div>
-        <img style="margin-right: 35px" src = "https://imgur.com/7QcTnYb.png" />
-	    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    </div>
-</div>
-<br/>
-
-<br/>
-<div align="center" style="display:grid; 
-            justify-content: center;
-            padding:15px 0 30px 0">
-    <div>
-        <img style="margin-right: 35px" src = "https://imgur.com/ZY2JUl1.png" />
-	    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    </div>
-</div>
-<br/>
+ASL Learner is a machine learning-based website. We have created this application for people who are interested in learning American Sign language. Through this app, a user can learn how to spell each letter in American Sign language. This app is very useful for people with speaking disabilities and hearing disabilities. This website will teach sign language to people with hearing disability, which will allow them to communication with others. This app will also help people who want to pursue any career to help the hearing-disabled person. Our website is very user-friendly and eye-catching. It is very easy to interact with. We have pages on the website but in the beginning, a user will be greeted with the home page. Then, they can move to the next page where they will find many words on a different levels. The user can choose any word from those levels and it will take them to the page. On that page, the user will try to mimic the sign language of each letter of that chosen word. When the user is done, the website will bring them back to the word choice page. There is also a sign in feature which saves a user’s progress which they can access through the info page.
 
 ## Design and Experiments 
 
@@ -158,11 +103,47 @@ https://www.kaggle.com/datasets/kapillondhe/american-sign-language
 ### User Interface Design
 
 ## Code Organization
-* ASL-Learner
+* ASL-Learner / front end
   - public: this folder contains all the images for website logos
   - src: this folder contains all the .js, .css files. This folder also contains components, asl_letters, images folders
-  	- asl_letters: this folder contains all
-
+  	- asl_letters: this folder contains all sign images for every letter
+	- components: it conatins components can be used in the website
+	- images: it contains images for the homepage
+	- App.css: it contains the styling for app.js file
+	- App.js: this file connects all the pages and creates path for them
+	- App.test.js: it tests the App.js file
+	- chooseLevel.css: it contains the styling for chooseLevel.jsx
+	- chooseLevel.jsx: it contains all the level and words inside each level which a user can choose
+	- game.css: it contains the styling for the game.jsx file
+	- game.jsx: it is the portion where a user tries to mimic fingerspelling of each letters of a word to get points
+	- home.css: it contains styling for home.js file
+	- home.js: it is the front page or default page that a user interacts at first
+	- index.css: it contains styling for index.js file
+	- index.js: it is the root file that contains App.js file to browse through other pages
+	- info.css: it contains styling for info.jsx file
+	- info.jsx: it contains user info where a user can access their scores and username
+	- Login.js: it allows user to login to the website
+	- logo.svg: it is default file from react
+	- Register.css: it contains styling for Register.js file
+	- Register.js: it allows new users to sign up and create a new account in the website
+	- reportWebVitals.js: it is a default file from react
+	- setupTests.js: it is a defualt file from react
+	- webcam.css: it contains styling for webcam.js and webcam.html files
+	- webcam.html: it contains the html portion of webcam
+	- webcam.js: it contains .js portion of webcam
+	- webcams.js: it allows the webcam to access in the website
+  - package.json: it has the all the packages
+  - package-lock.json: it has more hidden packages that is used in the website
+  
+* backend
+  - _pycache_: it contains all the python caches of the project
+  - instance: it has the databases of the project
+  - app.py: it is the python file that contains all the backend functions
+  - model.py: it is the older model.py file
+* model_training.ipynb: it is the jupiter file that trained the model
+* README.md: it is the readme of the project
+  
+  
 ## How to Run
 
 ## How to Train
