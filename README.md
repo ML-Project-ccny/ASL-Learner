@@ -7,7 +7,7 @@
             justify-content: center;
             padding:15px 0 30px 0">
     <div>
-        <img style="margin-right: 35px; width: 300px; height: 250px" src = "https://3.files.edl.io/5047/21/09/09/154508-86885ac7-894b-431b-8f3a-da44043deb9e.jpg" />
+        <img style="margin-right: 35px; width: 1200px; height: 500px" src = "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/American_Sign_Language_ASL.svg/2560px-American_Sign_Language_ASL.svg.png" />
 	    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     </div>
 </div>
@@ -15,7 +15,7 @@
 
 
 ## Description
-ASL Learner is a machine learning-based website. We have created this application for people who are interested in learning American Sign language. Through this app, a user can learn how to spell each letter in American Sign language. This app is very useful for people with speaking disabilities and hearing disabilities. This website will teach sign language to people with hearing disability, which will allow them to communication with others. This app will also help people who want to pursue any career to help the hearing-disabled person. Our website is very user-friendly and eye-catching. It is very easy to interact with. We have pages on the website but in the beginning, a user will be greeted with the home page. Then, they can move to the next page where they will find many words on a different levels. The user can choose any word from those levels and it will take them to the page. On that page, the user will try to mimic the sign language of each letter of that chosen word. When the user is done, the website will bring them back to the word choice page. There is also a sign in feature which saves a user’s progress which they can access through the info page.
+ASL Learner is a machine learning-based website for people interested in learning American Sign Language fingerspelling. With this website, a user can learn how to spell each letter in American Sign Language. This is very useful for people with either speaking or hearing disabilities. The website will also teach people how to do fingerspelling which will allow them to communicate with a hearing-disabled person. Our website is user-friendly and eye-catching.
 
 ## Design and Experiments 
 
@@ -173,6 +173,18 @@ Experiment 12 was concluded as the best in terms of model performance.
 | 13 | ResNet152 + background removal | 2 | tt.RandomCrop(200, padding=25, padding_mode='reflect') <br />tt.RandomHorizontalFlip() <br />tt.RandomRotation(10) <br />tt.RandomPerspective(distortion_scale=0.2) <br />tt.ToTensor() | max_lr = 1e-4 <br />grad_clip = 0.1 <br />weight_decay = 1e-4 <br />opt_func = torch.optim.Adam | default resnet152  | default resnet152  | default resnet152  |
 | 14 | Regnet_y_32gf + background removal | 2 | tt.RandomCrop(200, padding=25, padding_mode='reflect') <br />tt.RandomHorizontalFlip() <br />tt.RandomRotation(10) <br />tt.RandomPerspective(distortion_scale=0.2) <br />tt.ToTensor() | max_lr = 1e-4 <br />grad_clip = 0.1 <br />weight_decay = 1e-4 <br />opt_func = torch.optim.Adam | default regnet_y_32gf  | default regnet_y_32gf  | default regnet_y_32gf  |
 
+#### Confusion Matrix of the Final Version of the Model
+
+<br/>
+<div align="center" style="display:grid; 
+            justify-content: center;
+            padding:5px 0 10px 0">
+    <div>
+        <img style="margin-right: 35px; width: 507px; height: 438px" src = "https://imgur.com/BeUolii.png" />
+	    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    </div>
+</div>
+<br/>
 
 
 ### User Interface Design
@@ -213,8 +225,8 @@ Experiment 12 was concluded as the best in terms of model performance.
 * backend
   - _pycache_: it contains all the python caches of the project
   - instance: it has the databases of the project
-  - app.py: it is the python file that is responsible for fetching the image array, transforming it and evaluating it.
-  - model.py: its a python file that contains code for model class and evaluation functions
+  - app.py: it has code responsible for fetching the image array, transforming it and evaluating it
+  - model.py: it contains code for model class and evaluation functions
 * model_training.ipynb: it is the jupiter file that trained the model
 * README.md: it is the readme of the project
   
