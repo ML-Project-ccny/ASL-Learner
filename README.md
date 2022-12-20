@@ -44,7 +44,21 @@ train_tfms = tt.Compose([
                          tt.ToTensor()
                         ])                       
 ```
-The images used for testing the model were first preprocessed using a [tool](https://github.com/danielgatis/rembg) to remove the background of an image. This [background removal model](https://github.com/danielgatis/rembg) is also used in the backend to preprocess images before the evaluation using ResNet152.
+The images used for testing the model were first preprocessed using a [tool](https://github.com/danielgatis/rembg) to remove the background of an image. This [background removal model](https://github.com/danielgatis/rembg) is also used in the backend to preprocess images before the evaluation using ResNet152. That allows us to ignore the background of the gestures confusing the model which increases the accuracy of classification.
+
+An example of image preprocessing using this tool:
+
+<br/>
+<div align="center" style="display:grid; 
+            justify-content: center;
+            padding:15px 0 30px 0">
+    <div>
+        <img style="margin-right: 35px" src = "https://imgur.com/zqFGk1u.png" />
+	    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <img style="margin-left: 35px" src = "https://imgur.com/1cVVKhi.png" />
+    </div>
+</div>
+<br/>
 
 The initial model for the website was a simple convolutional neural network built from scratch. There were many different variations of the built-from-scratch model, however, the best overall was a one-dimensional image classification model trained on images 75x75, which had 4 ReLU dense layers, and 3 ReLU convolutional layers.
 
@@ -73,6 +87,14 @@ However, that initial approach was incorrect, since image classification is much
 So for the reason described above, a pre-trained image classification model was used. The first version was ResNet34. It immediately was able to produce a much higher accuracy on non-training datasets (60% to 70% depending on the dataset used for testing), unlike the built-from-scratch model. It was clear that the overfitting didn't happen anymore and usage of a pre-trained model was the right path. Different experiments were performed to make the accuracy even higher, but the best solution again was to use another more complex model, which is the ResNet152. A model similar to ResNet152, Regnet_y_32gf, was also tested, but the accuracy results were similar, so the decision was to stick with ResNet152. The parameters used to train pre-trained models are identical to the parameters used for the final model. Testing data was also first preprocessed using [background removal model](https://github.com/danielgatis/rembg).
 
 ### ML Dataset Description
+#### Synthetic
+Dataset used for training the built-from-scratch model. The idea was to make our model distinguish between hand and background since the synthetic dataset contains a lot of images with simulated backgrounds. It didn't work, so the background removal model was used after.
+
+https://www.kaggle.com/datasets/allexmendes/asl-alphabet-synthetic
+
+#### Londhe
+Was used first to test the built-from-scratch model trained with a Synthetic dataset. Since the accuracy was 0% this dataset was also used to train the built-from-scratch model.
+https://www.kaggle.com/datasets/kapillondhe/american-sign-language
 
 ### ML Model Experimental Performance
 
@@ -85,6 +107,25 @@ So for the reason described above, a pre-trained image classification model was 
 ## How to Train
 
 ## Challenges Faced
+### ML side
+The model ResNet152 used for the project is not ideal Some gestures (particularly gestures for pairs of letters E&S, K&V, and G&H) are often misclassified because of the similarity of hand gestures themselves. See the example for letters E and S below:
+
+<br/>
+<div align="center" style="display:grid; 
+            justify-content: center;
+            padding:15px 0 30px 0">
+    <div>
+        <img style="margin-right: 35px" src = "https://imgur.com/SjzD6Gz.png" />
+	    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <img style="margin-left: 35px" src = "https://imgur.com/RWperuv.png" />
+    </div>
+</div>
+<br/>
+
+We have tried to implement two possible solutions to it. One of them was a multiple frame classification and another one was to use another additional binary models that would classify one of the letters in those pairs.
+
+However, it didn’t seem to improve the user experience and we’ve decided to simply implement custom thresholds in the backend for those letters since the purpose of our project is to teach a user how to do the fingerspelling. The human mind is much more advanced than our model. If a user places his thumb finger just a little bit differently from what our model could understand, another person would be able to identify the gesture from the context correctly.
+
 
 ## Future Work
 
