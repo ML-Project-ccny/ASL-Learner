@@ -153,7 +153,7 @@ The overall evaluation of model performance was based on the accuracy of the Ras
 | 13 | ResNet152 + separate models for pairs of misclassified letters + background removal | Akash | 100% | --- | --- | 100% | 82% | --- | --- | 60% | 95% |
 | 14 | Regnet_y_32gf + background removal | Akash | 100% | --- | --- | 100% | 80% | --- | --- | 62% | 92% |
 
-Experiment 12 was concluded as the best in terms of model performance.
+Experiment 12 was concluded to be the best in terms of the model performance.
 
 #### Experiment Parameters
 | # | Model | Epochs | Transforms | Hyperparameters | # of Dense Layers | Units per layer | # of Conv Layers |
@@ -173,7 +173,7 @@ Experiment 12 was concluded as the best in terms of model performance.
 | 13 | ResNet152 + separate models for pairs of misclassified letters + background removal | 2 | tt.RandomCrop(200, padding=25, padding_mode='reflect') <br />tt.RandomHorizontalFlip() <br />tt.RandomRotation(10) <br />tt.RandomPerspective(distortion_scale=0.2) <br />tt.ToTensor() | max_lr = 1e-4 <br />grad_clip = 0.1 <br />weight_decay = 1e-4 <br />opt_func = torch.optim.Adam | default resnet152  | default resnet152  | default resnet152  |
 | 14 | Regnet_y_32gf + background removal | 2 | tt.RandomCrop(200, padding=25, padding_mode='reflect') <br />tt.RandomHorizontalFlip() <br />tt.RandomRotation(10) <br />tt.RandomPerspective(distortion_scale=0.2) <br />tt.ToTensor() | max_lr = 1e-4 <br />grad_clip = 0.1 <br />weight_decay = 1e-4 <br />opt_func = torch.optim.Adam | default regnet_y_32gf  | default regnet_y_32gf  | default regnet_y_32gf  |
 
-#### Confusion Matrix of the Final Version of the Model
+#### Confusion Matrix of the Final Version of the Model (Rasband Dataset)
 
 <br/>
 <div align="center" style="display:grid; 
@@ -192,48 +192,55 @@ Experiment 12 was concluded as the best in terms of model performance.
 ## Code Organization
 * ASL-Learner / front end
   - public: this folder contains all the images for website logos
-  - src: this folder contains all the .js, .css files. This folder also contains components, asl_letters, images folders
+  - src: this folder contains all the .js and .css files. This folder also contains components, asl_letters, images folders
   	- asl_letters: this folder contains all sign images for every letter
-	- components: it conatins components can be used in the website
+	- components: it contains components that can be used in the website
 	- images: it contains images for the homepage
-	- App.css: it contains the styling for app.js file
-	- App.js: this file connects all the pages and creates path for them
+	- App.css: it contains the styling for the app.js file
+	- App.js: this file connects all the pages and creates a path for them
 	- App.test.js: it tests the App.js file
 	- chooseLevel.css: it contains the styling for chooseLevel.jsx
-	- chooseLevel.jsx: it contains all the level and words inside each level which a user can choose
+	- chooseLevel.jsx: it contains all the levels and words inside each level which a user can choose
 	- game.css: it contains the styling for the game.jsx file
-	- game.jsx: it is the portion where a user tries to mimic fingerspelling of each letters of a word to get points
-	- home.css: it contains styling for home.js file
-	- home.js: it is the front page or default page that a user interacts at first
-	- index.css: it contains styling for index.js file
-	- index.js: it is the root file that contains App.js file to browse through other pages
+	- game.jsx: it is the portion where a user tries to mimic the fingerspelling of each letter of a word to get points
+	- home.css: it contains styling for the home.js file
+	- home.js: it is the front page or default page that a user interacts with at first
+	- index.css: it contains styling for the index.js file
+	- index.js: it is the root file that contains the App.js file to browse through other pages
 	- info.css: it contains styling for info.jsx file
 	- info.jsx: it contains user info where a user can access their scores and username
-	- Login.js: it allows user to login to the website
-	- logo.svg: it is default file from react
-	- Register.css: it contains styling for Register.js file
-	- Register.js: it allows new users to sign up and create a new account in the website
+	- Login.js: it allows the user to login into the website
+	- logo.svg: it is the default file from react
+	- Register.css: it contains styling for the Register.js file
+	- Register.js: it allows new users to sign up and create a new account on the website
 	- reportWebVitals.js: it is a default file from react
-	- setupTests.js: it is a defualt file from react
+	- setupTests.js: it is a default file from react
 	- webcam.css: it contains styling for webcam.js and webcam.html files
-	- webcam.html: it contains the html portion of webcam
-	- webcam.js: it contains .js portion of webcam
-	- webcams.js: it allows the webcam to access in the website
-  - package.json: it has the all the packages
-  - package-lock.json: it has more hidden packages that is used in the website
+	- webcam.html: it contains the HTML portion of the webcam
+	- webcam.js: it contains the .js portion of the webcam
+	- webcams.js: it allows the webcam to access the website
+  - package.json: it has all the packages
+  - package-lock.json: it has more hidden packages that are used in the website
   
 * backend
   - _pycache_: it contains all the python caches of the project
   - instance: it has the databases of the project
-  - app.py: it has code responsible for fetching the image array, transforming it and evaluating it
+  - app.py: it has code responsible for fetching the image array, transforming it, and evaluating it
   - model.py: it contains code for model class and evaluation functions
-* model_training.ipynb: it is the jupiter file that trained the model
+* model_training.ipynb: it is the jupyter file that trained the model
 * README.md: it is the readme of the project
   
   
 ## How to Run
+- Install a [tool](https://github.com/danielgatis/rembg) to remove the background of an image. Please refer to the documentation on how to install provided in the link for the tool. 
+- Download the [model](https://drive.google.com/file/d/17QtYorTpe-L-9enrfxWUY4yrK1eBWIBH/view?usp=share_link) and place it in the backend folder. Make sure that the model file is named 'asl-colored-resnet152_2.pt.'
+
 
 ## How to Train
+- Download the [Akash](https://www.kaggle.com/datasets/grassknoted/asl-alphabet) dataset.
+- Place the Akash dataset in a folder named 'dataset_akash.' Place this folder in the same directory that contains model_training.ipynb file. Make sure that the dataset folder contains the Test and Train folders. Test and Train folders must contain 26 letter folders each.
+- Open model_training.ipynb file and run. The model will be saved in the same directory that contains model_training.ipynb file.
+- Download the [Rasband](https://www.kaggle.com/datasets/danrasband/asl-alphabet-test) dataset and place it in the folder named 'dataset_rasband.' Place this folder in the same directory that contains model_training.ipynb file. Make sure that the dataset folder contains the Test folder. This dataset can be used for the evaluation of testing accuracy.
 
 ## Challenges Faced
 ### ML side
@@ -256,7 +263,7 @@ We have tried to implement two possible solutions to it. One was a multiple-fram
 However, it didn’t seem to improve the user experience and we’ve decided to implement custom thresholds in the backend for those letters since the purpose of our project is to teach a user how to do the fingerspelling. The human mind is much more advanced than our model. If a user places his thumb finger just a little bit differently from what our model could understand, another person would be able to identify the gesture from the context correctly.
 
 ### Frontend/Backend
-One of the front-end challenges was figuring out which react hooks to use. Another challenge was for the register and login pages when we tried to use an API call to save user info or create a new user at the backend. We had to use the useState() function to make that possible. We also had to give user states for each pages to know which user it is.
+One of the front-end challenges was figuring out which react hooks to use. Another challenge was for the register and login pages when we tried to use an API call to save user info or create a new user at the backend. We had to use the useState() function to make that possible. We also had to give user states for each page to know which user it is.
 
 
 ## Future Work
