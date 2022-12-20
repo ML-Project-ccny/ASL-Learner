@@ -169,7 +169,7 @@ We have tried to implement two possible solutions to it. One of them was a multi
 However, it didn’t seem to improve the user experience and we’ve decided to simply implement custom thresholds in the backend for those letters since the purpose of our project is to teach a user how to do the fingerspelling. The human mind is much more advanced than our model. If a user places his thumb finger just a little bit differently from what our model could understand, another person would be able to identify the gesture from the context correctly.
 
 ### Frontend/ backend
-One of the front end challenges were figuring out which react hooks to use. Another challenge was for the register and login pages when we tried to use api call to save user info or create new user at the backend. We had use useState() function to make that possible. We also had to give user states for each page for the page to know which user it is
+One of the front-end challenges was figuring out which react hooks to use. Another challenge was for the register and login pages when we tried to use an API call to save user info or create a new user at the backend. We had to use the useState() function to make that possible. We also had to give user states for each pages to know which user it is.
 
 
 ## Future Work
