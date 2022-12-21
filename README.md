@@ -341,4 +341,4 @@ Future ideas for our application involving the ML side of the our project would 
 A minor improvement on the current game levels is to include a timed section in which users would need to sign gesture a word within a time limit to test user's spelling speeds. To develop this into a consumer-grade product, we would add Google AdSense to start monetizing the website. We would have a system in place where users would subscribe to get rid of ads. Other features would include the addition of a mobile app and having users share their progress with others through social media.
 
 ## The Team
-This project is the combined effort of ...
+This project is the combined effort of Mahmoud Agag, Yauheni Patapau, Luis Medina, Samiul Ahmed
