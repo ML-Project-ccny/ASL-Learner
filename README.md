@@ -20,6 +20,7 @@ ASL Learner is a machine learning-based website for people interested in learnin
 ## Design and Experiments 
 
 ### Software Design
+The program has two main components, a backend, and a frontend. In the front end, we used React to create the user interface. When necessary the frontend sends requests to the backend. The backend then handles the requests. It is connected to a database on which the backend can perform CRUD functionality. The backend then sends data back to the frontend in the form of JSON. Also within the backend, there exists a .pt file and a model.py file. The .pt file contains the weights of the model we trained. Those weights are then loaded into the model that is in the model.py file. The backend can then use ML model and start inserting inputs and returning outputs.
 
 ### ML Model Design
 The ML model used for gesture classification is a modified ResNet152. The output layer of the model was modified to produce 26 classes which correspond to 26 letters in the alphabet. The model was trained for one epoch with ResNet152 layers frozen and then for an additional epoch with all layers unfrozen. 
@@ -188,6 +189,7 @@ Experiment 12 was concluded to be the best in terms of the model performance.
 
 
 ### User Interface Design
+When the user opens the app, they are greeted by a home page, in which they can learn about ASL and the purposes of the application. When the user clicks on ‘next’, they are sent to the level page. They have the option to sign in/ sign up. If they do their performance is tracked and the user can analyze it by going to the user info page. When a word is clicked the game page is then loaded. The user is prompted to hold up their hand to the webcam and try to replicate the letter that is shown to them. The accuracy is also displayed. Once they finish the word, they are sent back to the level page and the performance is updated. The user can choose another word or check their performance.
 
 ## Code Organization
 * ASL-Learner / front end
@@ -232,9 +234,11 @@ Experiment 12 was concluded to be the best in terms of the model performance.
   
   
 ## How to Run
+- Clone the repository.
 - Install a [tool](https://github.com/danielgatis/rembg) to remove the background of an image. Please refer to the documentation on how to install provided in the link for the tool. 
 - Download the [model](https://drive.google.com/file/d/17QtYorTpe-L-9enrfxWUY4yrK1eBWIBH/view?usp=share_link) and place it in the backend folder. Make sure that the model file is named 'asl-colored-resnet152_2.pt.'
-
+- Run ‘npm install’ in the frontend directory
+- Run  ‘npm run’ in the frontend directory and ‘python3 app.py’ in the backend directory 
 
 ## How to Train
 - Download the [Akash](https://www.kaggle.com/datasets/grassknoted/asl-alphabet) dataset.
