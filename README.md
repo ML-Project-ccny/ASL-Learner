@@ -289,7 +289,7 @@ When the user opens the app, they are greeted by a home page, in which they can 
 * backend
   - _pycache_: it contains all the python caches of the project
   - instance: it has the databases of the project
-  - app.py: it has code responsible for fetching the image array, transforming it, and evaluating it
+  - app.py: it has code responsible for user signing, score tracking, fetching the image array, transforming it, and evaluating it
   - model.py: it contains code for model class and evaluation functions
 * model_training.ipynb: it is the jupyter file that trained the model
 * README.md: it is the readme of the project
@@ -341,4 +341,4 @@ Future ideas for our application involving the ML side of the our project would 
 A minor improvement on the current game levels is to include a timed section in which users would need to sign gesture a word within a time limit to test user's spelling speeds. To develop this into a consumer-grade product, we would add Google AdSense to start monetizing the website. We would have a system in place where users would subscribe to get rid of ads. Other features would include the addition of a mobile app and having users share their progress with others through social media.
 
 ## The Team
-This project is the combined effort of Mahmoud, Yauheni, Luis, Samiul
+This project is the combined effort of [Mahmoud](https://github.com/mahmoudagag), [Yauheni](https://github.com/eugenepotapov2), [Luis](https://github.com/Glider717), [Samiul](https://github.com/samiularnob12)
