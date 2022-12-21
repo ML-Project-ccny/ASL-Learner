@@ -307,6 +307,7 @@ When the user opens the app, they are greeted by a home page, in which they can 
 - Place the Akash dataset in a folder named 'dataset_akash.' Place this folder in the same directory that contains model_training.ipynb file. Make sure that the dataset folder contains the Test and Train folders. Test and Train folders must contain 26 letter folders each.
 - Open model_training.ipynb file and run. The model will be saved in the same directory that contains model_training.ipynb file.
 - Download the [Rasband](https://www.kaggle.com/datasets/danrasband/asl-alphabet-test) dataset and place it in the folder named 'dataset_rasband.' Place this folder in the same directory that contains model_training.ipynb file. Make sure that the dataset folder contains the Test folder. This dataset can be used for the evaluation of testing accuracy.
+- [Checked Jupyter Notebook](https://drive.google.com/file/d/1qYTSxr_2W61bidOWpFO9g43CFzNytC0L/view?usp=share_link)
 
 ## Challenges Faced
 ### ML side
