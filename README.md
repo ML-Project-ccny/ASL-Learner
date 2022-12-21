@@ -24,9 +24,9 @@ A user can interact with the website by clicking on the "Let's Go" button from t
             justify-content: center;
             padding:15px 0 30px 0">
     <div>
-        <img style="margin-right: 35px; width: 500px; height: 300px" src = "https://i.imgur.com/UlCYr54.jpg" />
+        <img style="margin-right: 35px; width: 450px; height: 300px" src = "https://i.imgur.com/UlCYr54.jpg" />
 	    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <img style="margin-left: 35px; width: 400px; height: 300px" src = "https://i.imgur.com/6c8fb1J.jpg" />
+        <img style="margin-left: 35px; width: 450px; height: 300px" src = "https://i.imgur.com/6c8fb1J.jpg" />
     </div>
 </div>
 <br/>
@@ -52,9 +52,9 @@ After choosing a word, the user will go to the game page (left image) where they
             justify-content: center;
             padding:15px 0 30px 0">
     <div>
-        <img style="margin-right: 35px; width: 500px; height: 300px" src = "https://i.imgur.com/5nMo6JW.jpg" />
+        <img style="margin-right: 35px; width: 450px; height: 300px" src = "https://i.imgur.com/5nMo6JW.jpg" />
 	    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <img style="margin-left: 35px; width: 400px; height: 300px" src = "https://i.imgur.com/7oTwy6L.jpg" />
+        <img style="margin-left: 35px; width: 450px; height: 300px" src = "https://i.imgur.com/7oTwy6L.jpg" />
     </div>
 </div>
 <br/>
